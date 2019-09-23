@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  min-width: 1366px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+ul {
+  padding: 0 40px;
+}
+
+pre {
+  max-width: 100%;
+  border-radius: 5px;
+  line-height: 1.5;
+}
+
+pre code {
+  font-family: Menlo, Consolas, DejaVu Sans Mono, monospace;
+}
