@@ -1,5 +1,5 @@
 {
-  "name": "math",
+  "name": "@catnap/math.js",
   "version": "0.0.1",
   "description": "Math Object Extension.",
   "main": "math.js",
