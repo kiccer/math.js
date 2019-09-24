@@ -25,6 +25,18 @@ math.avg = function (...arg) {
   return this.sum(...arg) / arg.length
 }
 
+// multiplication
+math.mcl = function (...arg) {
+  arg = this.arg(...arg)
+  return arg.reduce((n, m) => n * m)
+}
+
+// number base conversion
+math.hex = function (num, from = 16, to = 10) {
+  num = String(num)
+  return parseInt(num, from).toString(to)
+}
+
 ;((out) => {
   if (typeof define === 'function') {
     define(() => out)

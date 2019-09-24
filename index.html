@@ -4,26 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link href="https://cdn.bootcss.com/normalize/8.0.1/normalize.min.css" rel="stylesheet">
-  <link href="https://cdn.bootcss.com/highlight.js/9.15.10/styles/atom-one-dark.min.css" rel="stylesheet">
+  <title>@catnap/math.js document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/highlight.js/9.15.10/styles/atom-one-light.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <div id="app">
-    <h1 align="center">math.js</h1>
-    <ul class="renderList">
-      <li v-for="(n, i) in renderList" :key="i">
-        <h3 class="title">{{ n.title }}</h3>
-        <pre class="test javascript"><code v-html="code(n.test)"></code></pre>
-      </li>
-    </ul>
+
+    <div class="topper">
+      <h1>@catnap/math.js</h1>
+      <div class="lead">
+        This is a extension of Math object. <br>
+        It inherits all attributes of Math object. <br>
+        Math.js exists to enrich the functions of native Math objects, <br>
+        And reduce the extra workload in actual development.
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <h2>How to use</h2>
+        <ul class="howToUse">
+          <li v-for="(n, i) in howToUse" :key="i">
+            <h3>for {{ n.language }}</h3>
+            <pre :class="[n.language]"><code v-html="n.code"></code></pre>
+          </li>
+        </ul>
+      </div>
+
+      <div class="row">
+        <h2>Function list</h2>
+        <ul class="renderList">
+          <li v-for="(n, i) in renderList" :key="i">
+            <h3>{{ n.title }}</h3>
+            <pre class="test javascript"><code v-html="code(n.test)"></code></pre>
+          </li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </body>
 <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
 <script src="./math.js"></script>
-<script>
+<script type="text/javascript">
 /* eslint-disable no-new */
 /* global Vue math hljs */
 
@@ -37,49 +63,73 @@ new Vue({
   el: '#app',
   data () {
     return {
+      howToUse: [
+        /* eslint-disable-next-line */
+        { language: 'html', code: this.encodeHTML('\<script src="./math.js"\>\</script\>') },
+        { language: 'javascript', code: this.encodeHTML('import math from \'@catnap/math.js\'') }
+      ],
       renderList: [
         {
           title: 'Inherited the method of Math object.',
           test: [
-            { label: 'const math = Object.create(Math)', value: 'Inherited the method of Math object.' },
-            { label: 'math.min(1, 2)', value: math.min(1, 2) },
-            { label: 'math.max(1, 2)', value: math.max(1, 2) },
-            { label: 'math.pow(2, 3)', value: math.pow(2, 3) },
-            { label: 'math.random()', value: math.random() }
+            { label: `const math = Object.create(Math)`, value: 'Inherited the method of Math object.' },
+            { label: `math.min(1, 2)`, value: math.min(1, 2) },
+            { label: `math.max(1, 2)`, value: math.max(1, 2) },
+            { label: `math.pow(2, 3)`, value: math.pow(2, 3) },
+            { label: `math.random()`, value: math.random() }
           ]
         },
         {
           title: 'Get the data type.',
           test: [
-            { label: 'math.type([])', value: math.type([]) },
-            { label: 'math.type({})', value: math.type({}) },
-            { label: 'math.type(null)', value: math.type(null) },
-            { label: 'math.type(\'\')', value: math.type('') },
-            { label: 'math.type()', value: math.type() }
+            { label: `math.type([])`, value: math.type([]) },
+            { label: `math.type({})`, value: math.type({}) },
+            { label: `math.type(null)`, value: math.type(null) },
+            { label: `math.type('')`, value: math.type('') },
+            { label: `math.type()`, value: math.type() }
           ]
         },
         {
           title: 'Parametric formatting.',
           test: [
-            { label: 'math.arg(1, 2, 3, 4)', value: math.arg(1, 2, 3, 4) },
-            { label: 'math.arg([1, 2, 3, 4])', value: math.arg([1, 2, 3, 4]) },
-            { label: 'math.arg([1, 2], 3, [4])', value: math.arg([1, 2], 3, [4]) }
+            { label: `math.arg(1, 2, 3, 4)`, value: math.arg(1, 2, 3, 4) },
+            { label: `math.arg([1, 2, 3, 4])`, value: math.arg([1, 2, 3, 4]) },
+            { label: `math.arg([1, 2], 3, [4])`, value: math.arg([1, 2], 3, [4]) }
           ]
         },
         {
           title: 'Array summation.',
           test: [
-            { label: 'math.sum(1, 2, 3, 4)', value: math.sum(1, 2, 3, 4) },
-            { label: 'math.sum([1, 2, 3, 4])', value: math.sum([1, 2, 3, 4]) },
-            { label: 'math.sum([1, 2], 3, [4])', value: math.sum([1, 2], 3, [4]) }
+            { label: `math.sum(1, 2, 3, 4)`, value: math.sum(1, 2, 3, 4) },
+            { label: `math.sum([1, 2, 3, 4])`, value: math.sum([1, 2, 3, 4]) },
+            { label: `math.sum([1, 2], 3, [4])`, value: math.sum([1, 2], 3, [4]) }
           ]
         },
         {
           title: 'Average value.',
           test: [
-            { label: 'math.avg(1, 2, 3, 4)', value: math.avg(1, 2, 3, 4) },
-            { label: 'math.avg([1, 2, 3, 4])', value: math.avg([1, 2, 3, 4]) },
-            { label: 'math.avg([1, 2], 3, [4])', value: math.avg([1, 2], 3, [4]) }
+            { label: `math.avg(1, 2, 3, 4)`, value: math.avg(1, 2, 3, 4) },
+            { label: `math.avg([1, 2, 3, 4])`, value: math.avg([1, 2, 3, 4]) },
+            { label: `math.avg([1, 2], 3, [4])`, value: math.avg([1, 2], 3, [4]) }
+          ]
+        },
+        {
+          title: 'Multiplication.',
+          test: [
+            { label: `math.mcl(1, 2, 3, 4)`, value: math.mcl(1, 2, 3, 4) },
+            { label: `math.mcl([1, 2, 3, 4])`, value: math.mcl([1, 2, 3, 4]) },
+            { label: `math.mcl([1, 2], 3, [4])`, value: math.mcl([1, 2], 3, [4]) }
+          ]
+        },
+        {
+          title: 'math.hex(num, from, to)',
+          test: [
+            { label: `math.hex('ff')`, value: math.hex('ff') },
+            { label: `math.hex('ff', 16, 2)`, value: math.hex('ff', 16, 2) },
+            { label: `math.hex('255', 10, 16)`, value: math.hex('255', 10, 16) },
+            { label: `math.hex('255', 10, 2)`, value: math.hex('255', 10, 2) },
+            { label: `math.hex('17', 8, 2)`, value: math.hex('17', 8, 2) },
+            { label: `math.hex('ff', 8, 2)`, value: math.hex('ff', 8, 2) }
           ]
         }
       ]
@@ -94,6 +144,9 @@ new Vue({
   methods: {
     code (arr) {
       return arr.map(n => n.label + ' // ' + JSON.stringify(n.value)).join('\n')
+    },
+    encodeHTML (c) {
+      return c.replace(/</g, '&lt;').replace(/>/g, '&gt;')
     }
   }
 })
