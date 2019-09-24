@@ -37,6 +37,12 @@ math.hex = function (num, from = 16, to = 10) {
   return parseInt(num, from).toString(to)
 }
 
+// Random Numbers with Range
+math.rand = function (from = 0, to = 1, decimal = 17) {
+  let dVal = this.abs(to - from)
+  return +(this.random() * dVal + this.min(from, to)).toFixed(decimal)
+}
+
 ;((out) => {
   if (typeof define === 'function') {
     define(() => out)

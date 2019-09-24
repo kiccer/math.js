@@ -131,6 +131,14 @@ new Vue({
             { label: `math.hex('17', 8, 2)`, value: math.hex('17', 8, 2) },
             { label: `math.hex('ff', 8, 2)`, value: math.hex('ff', 8, 2) }
           ]
+        },
+        {
+          title: 'Random Numbers with Range',
+          test: [
+            { label: `math.rand()`, value: math.rand() },
+            { label: `math.rand(50, 100)`, value: math.rand(50, 100) },
+            { label: `math.rand(50, 100, 2)`, value: math.rand(50, 100, 2) }
+          ]
         }
       ]
     }
