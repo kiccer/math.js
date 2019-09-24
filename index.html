@@ -27,7 +27,7 @@
         <h2>How to use</h2>
         <ul class="howToUse">
           <li v-for="(n, i) in howToUse" :key="i">
-            <h3>for {{ n.language }}</h3>
+            <h3>{{ n.title }}</h3>
             <pre :class="[n.language]"><code v-html="n.code"></code></pre>
           </li>
         </ul>
@@ -65,8 +65,9 @@ new Vue({
     return {
       howToUse: [
         /* eslint-disable-next-line */
-        { language: 'html', code: this.encodeHTML('\<script src="./math.js"\>\</script\>') },
-        { language: 'javascript', code: this.encodeHTML('import math from \'@catnap/math.js\'') }
+        { language: 'cmd', code: this.encodeHTML('npm install --save @catnap/math.js'), title: 'install' },
+        { language: 'html', code: this.encodeHTML('\<script src="./math.js"\>\</script\>'), title: 'for html' },
+        { language: 'javascript', code: this.encodeHTML('import math from \'@catnap/math.js\''), title: 'for javascript' }
       ],
       renderList: [
         {
