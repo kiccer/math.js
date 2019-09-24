@@ -8,9 +8,7 @@ math.type = function (t) {
 
 // parametric formatting
 math.arg = function (...arg) {
-  return arg.map(n => this.type(n) === 'Array' ? n : [n])
-    .reduce((n, m) => n.concat(m))
-    .map(n => +n)
+  return [].concat(...arg).map(n => +n)
 }
 
 // array summation
