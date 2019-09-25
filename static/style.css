@@ -63,3 +63,9 @@ pre code {
 .row + .row {
   margin-top: 40px;
 }
+
+.copyright {
+  text-align: center;
+  margin: 50px 0 0;
+  font-size: 12px;
+}
