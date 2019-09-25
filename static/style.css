@@ -1,0 +1,65 @@
+#app {
+  margin: auto;
+  padding-bottom: 50px;
+  position: relative;
+  color: #0c446f;
+}
+
+#particles-js {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.topper {
+  padding: 40px 15px;
+  text-align: center;
+  position: relative;
+  /* background-color: #fff; */
+}
+
+/* .topper > * {
+  position: relative;
+} */
+
+.topper .bg {
+  background-image: url('./img/math_bg.jpg');
+  background-size: 200px 200px;
+  opacity: 0.2;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  box-shadow: 0 -20px 20px 0 #fff inset;
+}
+
+.topper h1 {
+  margin-bottom: 40px;
+  font-size: 40px;
+  text-decoration: underline;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0 20px;
+  margin: 0;
+}
+
+pre {
+  border-radius: 5px;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+pre code {
+  font-family: Menlo, Consolas, DejaVu Sans Mono, monospace;
+}
+
+.row + .row {
+  margin-top: 40px;
+}
