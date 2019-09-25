@@ -144,11 +144,66 @@ new Vue({
           ]
         },
         {
-          title: 'Random Numbers with Range',
+          title: 'Random Numbers with Range.',
           demo: [
             { label: `math.rand()`, value: math.rand() },
             { label: `math.rand(50, 100)`, value: math.rand(50, 100) },
             { label: `math.rand(50, 100, 2)`, value: math.rand(50, 100, 2) }
+          ]
+        },
+        {
+          title: 'Round up the number of reserved digits.',
+          demo: [
+            { label: `math.ceil(1.333)`, value: math.ceil(1.333) },
+            { label: `math.ceil(1.333, 2)`, value: math.ceil(1.333, 2) }
+          ]
+        },
+        {
+          title: 'Round down the number of reserved digits.',
+          demo: [
+            { label: `math.floor(1.555)`, value: math.floor(1.555) },
+            { label: `math.floor(1.555, 2)`, value: math.floor(1.555, 2) }
+          ]
+        },
+        {
+          title: 'Rounding the number of reserved digits.',
+          demo: [
+            { label: `math.round(1.333)`, value: math.round(1.333) },
+            { label: `math.round(1.333, 2)`, value: math.round(1.333, 2) },
+            { label: `math.round(1.555)`, value: math.round(1.555) },
+            { label: `math.round(1.555, 2)`, value: math.round(1.555, 2) }
+          ]
+        },
+        {
+          title: 'Returns the number of specified ranges. Same as "Math.max(50, Math.min(number, 100))"',
+          demo: [
+            { label: `math.range().in(-1)`, value: math.range().in(-1) },
+            { label: `math.range().in(2)`, value: math.range().in(2) },
+            { label: `math.range().in(0.5)`, value: math.range().in(0.5) },
+            { label: `math.range(50, 100).in(10)`, value: math.range(50, 100).in(10) },
+            { label: `math.range(50, 100).in(110)`, value: math.range(50, 100).in(110) },
+            { label: `math.range(50, 100).in(50)`, value: math.range(50, 100).in(50) }
+          ]
+        },
+        {
+          title: '人民币大写',
+          demo: [
+            { label: `math.RMB(0.10)`, value: math.RMB(0.10) },
+            { label: `math.RMB(0.01)`, value: math.RMB(0.01) },
+            { label: `math.RMB(0.11)`, value: math.RMB(0.11) },
+            { label: `math.RMB(10)`, value: math.RMB(10) },
+            { label: `math.RMB(500)`, value: math.RMB(500) },
+            { label: `math.RMB(5000000)`, value: math.RMB(5000000) },
+            { label: `math.RMB(123456789)`, value: math.RMB(123456789) },
+            { label: `math.RMB(123456789.50)`, value: math.RMB(123456789.50) },
+            { label: `math.RMB(-0.10)`, value: math.RMB(-0.10) },
+            { label: `math.RMB(-0.01)`, value: math.RMB(-0.01) },
+            { label: `math.RMB(-0.11)`, value: math.RMB(-0.11) },
+            { label: `math.RMB(-10)`, value: math.RMB(-10) },
+            { label: `math.RMB(-500)`, value: math.RMB(-500) },
+            { label: `math.RMB(-5000000)`, value: math.RMB(-5000000) },
+            { label: `math.RMB(-123456789)`, value: math.RMB(-123456789) },
+            { label: `math.RMB(-123456789.50)`, value: math.RMB(-123456789.50) }
           ]
         }
       ]

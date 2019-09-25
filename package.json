@@ -1,6 +1,6 @@
 {
   "name": "@catnap/math.js",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "Math Object Extension.",
   "main": "math.js",
   "keywords": [
