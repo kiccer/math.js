@@ -76,7 +76,7 @@ math.RMB = function (rmb) {
 
   let s = fraction.map((n, i) => (digit[Math.floor(Math.abs(rmb) * 10 * 10 ** i) % 10] + n).replace(/零./, '')).join('') || '整'
 
-  let rmbInt = ~~rmb
+  let rmbInt = ~~Math.abs(rmb)
 
   for (let i = 0; i < unit[0].length && rmbInt > 0; i++) {
     let p = ''
