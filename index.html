@@ -7,18 +7,21 @@
   <title>@catnap/math.js document</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.bootcss.com/highlight.js/9.15.10/styles/atom-one-light.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./static/style.css">
 </head>
 <body>
+  <div id="particles-js"></div>
   <div id="app">
 
     <div class="topper">
+      <div class="bg"></div>
       <h1>@catnap/math.js</h1>
       <div class="lead">
         This is a extension of Math object. <br>
         It inherits all attributes of Math object. <br>
         Math.js exists to enrich the functions of native Math objects, <br>
-        And reduce the extra workload in actual development.
+        And reduce the extra workload in actual development. <br>
+        You can experience scripting in browser developer tools.
       </div>
     </div>
 
@@ -27,7 +30,7 @@
         <h2>How to use</h2>
         <ul class="howToUse">
           <li v-for="(n, i) in howToUse" :key="i">
-            <h3>for {{ n.language }}</h3>
+            <h3>{{ n.title }}</h3>
             <pre :class="[n.language]"><code v-html="n.code"></code></pre>
           </li>
         </ul>
@@ -38,7 +41,7 @@
         <ul class="renderList">
           <li v-for="(n, i) in renderList" :key="i">
             <h3>{{ n.title }}</h3>
-            <pre class="test javascript"><code v-html="code(n.test)"></code></pre>
+            <pre class="demo javascript"><code v-html="code(n.demo)"></code></pre>
           </li>
         </ul>
       </div>
@@ -48,10 +51,11 @@
 </body>
 <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
 <script src="./math.js"></script>
 <script type="text/javascript">
 /* eslint-disable no-new */
-/* global Vue math hljs */
+/* global Vue math hljs particlesJS */
 
 const highlightCode = () => {
   document.querySelectorAll('pre').forEach(el => {
@@ -64,15 +68,16 @@ new Vue({
   data () {
     return {
       howToUse: [
+        { language: 'cmd', code: this.encodeHTML('npm install --save @catnap/math.js'), title: 'Install' },
         /* eslint-disable-next-line */
-        { language: 'html', code: this.encodeHTML('\<script src="./math.js"\>\</script\>') },
-        { language: 'javascript', code: this.encodeHTML('import math from \'@catnap/math.js\'') }
+        { language: 'html', code: this.encodeHTML('\<script src="./math.js"\>\</script\>'), title: 'In html' },
+        { language: 'javascript', code: this.encodeHTML('import math from \'@catnap/math.js\''), title: 'In javascript' }
       ],
       renderList: [
         {
           title: 'Inherited the method of Math object.',
-          test: [
-            { label: `const math = Object.create(Math)`, value: 'Inherited the method of Math object.' },
+          demo: [
+            // { label: `const math = Object.create(Math)`, value: 'Inherited the method of Math object.' },
             { label: `math.min(1, 2)`, value: math.min(1, 2) },
             { label: `math.max(1, 2)`, value: math.max(1, 2) },
             { label: `math.pow(2, 3)`, value: math.pow(2, 3) },
@@ -81,50 +86,55 @@ new Vue({
         },
         {
           title: 'Get the data type.',
-          test: [
+          demo: [
+            { label: `math.type(console.log)`, value: math.type(console.log) },
             { label: `math.type([])`, value: math.type([]) },
             { label: `math.type({})`, value: math.type({}) },
             { label: `math.type(null)`, value: math.type(null) },
+            { label: `math.type(NaN)`, value: math.type(NaN) },
+            { label: `math.type(Infinity)`, value: math.type(Infinity) },
+            { label: `math.type(123)`, value: math.type(123) },
             { label: `math.type('')`, value: math.type('') },
+            { label: `math.type(new Date())`, value: math.type(new Date()) },
+            { label: `math.type(undefined)`, value: math.type(undefined) },
             { label: `math.type()`, value: math.type() }
           ]
         },
         {
           title: 'Parametric formatting.',
-          test: [
-            { label: `math.arg(1, 2, 3, 4)`, value: math.arg(1, 2, 3, 4) },
-            { label: `math.arg(1, 2, 3, 4)`, value: math.arg(1, 2, 3, 4) },
-            { label: `math.arg([1, 2, 3, 4])`, value: math.arg([1, 2, 3, 4]) },
-            { label: `math.arg([1, 2], 3, [4])`, value: math.arg([1, 2], 3, [4]) }
+          demo: [
+            { label: `math.arg(1, '2', 3, 4)`, value: math.arg(1, '2', 3, 4) },
+            { label: `math.arg([1, '2', 3, 4])`, value: math.arg([1, '2', 3, 4]) },
+            { label: `math.arg([1, '2'], 3, [4])`, value: math.arg([1, '2'], 3, [4]) }
           ]
         },
         {
           title: 'Array summation.',
-          test: [
-            { label: `math.sum(1, 2, 3, 4)`, value: math.sum(1, 2, 3, 4) },
-            { label: `math.sum([1, 2, 3, 4])`, value: math.sum([1, 2, 3, 4]) },
-            { label: `math.sum([1, 2], 3, [4])`, value: math.sum([1, 2], 3, [4]) }
+          demo: [
+            { label: `math.sum(2, 3, 5)`, value: math.sum(2, 3, 5) },
+            { label: `math.sum([4, 2, 6])`, value: math.sum([4, 2, 6]) },
+            { label: `math.sum([6, 8], 3, [4])`, value: math.sum([6, 8], 3, [4]) }
           ]
         },
         {
           title: 'Average value.',
-          test: [
-            { label: `math.avg(1, 2, 3, 4)`, value: math.avg(1, 2, 3, 4) },
-            { label: `math.avg([1, 2, 3, 4])`, value: math.avg([1, 2, 3, 4]) },
-            { label: `math.avg([1, 2], 3, [4])`, value: math.avg([1, 2], 3, [4]) }
+          demo: [
+            { label: `math.avg(2, 3, 5)`, value: math.avg(2, 3, 5) },
+            { label: `math.avg([4, 2, 6])`, value: math.avg([4, 2, 6]) },
+            { label: `math.avg([6, 8], 3, [4])`, value: math.avg([6, 8], 3, [4]) }
           ]
         },
         {
           title: 'Multiplication.',
-          test: [
-            { label: `math.mcl(1, 2, 3, 4)`, value: math.mcl(1, 2, 3, 4) },
-            { label: `math.mcl([1, 2, 3, 4])`, value: math.mcl([1, 2, 3, 4]) },
-            { label: `math.mcl([1, 2], 3, [4])`, value: math.mcl([1, 2], 3, [4]) }
+          demo: [
+            { label: `math.mcl(2, 3, 5)`, value: math.mcl(2, 3, 5) },
+            { label: `math.mcl([4, 2, 6])`, value: math.mcl([4, 2, 6]) },
+            { label: `math.mcl([6, 8], 3, [4])`, value: math.mcl([6, 8], 3, [4]) }
           ]
         },
         {
           title: 'math.hex(num, from, to)',
-          test: [
+          demo: [
             { label: `math.hex('ff')`, value: math.hex('ff') },
             { label: `math.hex('ff', 16, 2)`, value: math.hex('ff', 16, 2) },
             { label: `math.hex('255', 10, 16)`, value: math.hex('255', 10, 16) },
@@ -135,7 +145,7 @@ new Vue({
         },
         {
           title: 'Random Numbers with Range',
-          test: [
+          demo: [
             { label: `math.rand()`, value: math.rand() },
             { label: `math.rand(50, 100)`, value: math.rand(50, 100) },
             { label: `math.rand(50, 100, 2)`, value: math.rand(50, 100, 2) }
@@ -146,6 +156,7 @@ new Vue({
   },
   mounted () {
     highlightCode()
+    this.particlesLoad()
   },
   updated () {
     highlightCode()
@@ -156,6 +167,9 @@ new Vue({
     },
     encodeHTML (c) {
       return c.replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    },
+    particlesLoad () {
+      particlesJS.load('particles-js', './static/particles.json', () => {})
     }
   }
 })
