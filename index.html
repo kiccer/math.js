@@ -40,7 +40,7 @@
         <h2>Function list</h2>
         <ul class="renderList">
           <li v-for="(n, i) in renderList" :key="i">
-            <h3>{{ n.title }}</h3>
+            <h3>{{ i + 1 }}. {{ n.title }}</h3>
             <pre class="demo javascript"><code v-html="code(n.demo)"></code></pre>
           </li>
         </ul>
@@ -151,9 +151,21 @@ new Vue({
         {
           title: 'Random Numbers with Range.',
           demo: [
-            { label: `math.rand()`, value: math.rand() },
-            { label: `math.rand(50, 100)`, value: math.rand(50, 100) },
-            { label: `math.rand(50, 100, 2)`, value: math.rand(50, 100, 2) }
+            { label: `math.random()`, value: math.random() },
+            { label: `math.random(2)`, value: math.random(2) },
+            { label: `math.random(50, 100)`, value: math.random(50, 100) },
+            { label: `math.random(50, 100, 2)`, value: math.random(50, 100, 2) }
+          ]
+        },
+        {
+          title: '"math.min" and "math.max" support array parameters.',
+          demo: [
+            { label: `Math.min([1, 2, 3])`, value: Math.min([1, 2, 3]) },
+            { label: `math.min([1, 2, 3])`, value: math.min([1, 2, 3]) },
+            { label: `math.min([1, 2, 3], 4, [5])`, value: math.min([1, 2, 3], 4, [5]) },
+            { label: `Math.max([1, 2, 3])`, value: Math.max([1, 2, 3]) },
+            { label: `math.max([1, 2, 3])`, value: math.max([1, 2, 3]) },
+            { label: `math.max([1, 2, 3], 4, [5])`, value: math.max([1, 2, 3], 4, [5]) }
           ]
         },
         {
@@ -188,6 +200,15 @@ new Vue({
             { label: `math.range(50, 100).in(10)`, value: math.range(50, 100).in(10) },
             { label: `math.range(50, 100).in(110)`, value: math.range(50, 100).in(110) },
             { label: `math.range(50, 100).in(50)`, value: math.range(50, 100).in(50) }
+          ]
+        },
+        {
+          title: 'Returns a random number of specified ranges. Same as "math.random(50, 100, 2)"',
+          demo: [
+            { label: `math.range().rand()`, value: math.range().rand() },
+            { label: `math.range().rand(2)`, value: math.range().rand(2) },
+            { label: `math.range(50, 100).rand()`, value: math.range(50, 100).rand() },
+            { label: `math.range(50, 100).rand(2)`, value: math.range(50, 100).rand(2) }
           ]
         },
         {

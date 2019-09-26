@@ -18,15 +18,10 @@
   padding: 40px 15px;
   text-align: center;
   position: relative;
-  /* background-color: #fff; */
 }
 
-/* .topper > * {
-  position: relative;
-} */
-
 .topper .bg {
-  background-image: url('./img/math_bg.jpg');
+  background-image: url('./img/math_bg_s.jpg');
   background-size: 200px 200px;
   opacity: 0.2;
   width: 100%;
@@ -48,6 +43,11 @@ ul {
   list-style-type: none;
   padding: 0 20px;
   margin: 0;
+}
+
+.renderList li,
+.howToUse li {
+  margin-bottom: 30px;
 }
 
 pre {
