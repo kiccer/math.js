@@ -1,3 +1,4 @@
+'use strict'
 /* global define */
 
 // --------------------------------------
@@ -39,10 +40,42 @@ math.hex = function (num, from = 16, to = 10) {
   return parseInt(num, from).toString(to)
 }
 
-// Random Numbers with Range
+// Random Numbers with Range (Will be abandoned)
 math.rand = function (from = 0, to = 1, decimal = 17) {
   let dVal = this.abs(to - from)
-  return +(this.random() * dVal + this.min(from, to)).toFixed(decimal)
+  return +(Math.random() * dVal + this.min(from, to)).toFixed(decimal)
+}
+
+// Random Numbers with Range (random will replace rand)
+math.random = function (...arg) {
+  arg = this.arg(...arg)
+
+  if (!arg.length) {
+    arg = [0, 1, 17]
+  } else if (arg.length === 1) {
+    arg = [0, 1].concat(arg)
+  } else if (arg.length === 2) {
+    arg = arg.concat(17)
+  }
+
+  let from = arg[0]
+  let to = arg[1]
+  let decimal = arg[2]
+  let dVal = this.abs(to - from)
+
+  return +(Math.random() * dVal + this.min(from, to)).toFixed(decimal)
+}
+
+// math.min support array parameters
+math.min = function (...arg) {
+  arg = this.arg(...arg)
+  return Math.min(...arg)
+}
+
+// math.max support array parameters
+math.max = function (...arg) {
+  arg = this.arg(...arg)
+  return Math.max(...arg)
 }
 
 // Round up the number of reserved digits
@@ -101,6 +134,12 @@ math.Range.prototype.in = function (num) {
   let s = this.r.slice(0, 1)[0]
   let e = this.r.slice(-1)[0]
   return Math.max(s, Math.min(num, e))
+}
+
+math.Range.prototype.rand = function (num = 17) {
+  let s = this.r.slice(0, 1)[0]
+  let e = this.r.slice(-1)[0]
+  return math.random(s, e, num)
 }
 
 // --------------------------------------
