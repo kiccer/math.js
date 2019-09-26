@@ -74,8 +74,7 @@ new Vue({
       startYear: 2019,
       howToUse: [
         { language: 'cmd', code: this.encodeHTML('npm install --save @catnap/math.js'), title: 'Install' },
-        /* eslint-disable-next-line */
-        { language: 'html', code: this.encodeHTML('\<script src="./math.js"\>\</script\>'), title: 'In html' },
+        { language: 'html', code: this.encodeHTML(decodeURI('%3Cscript%20src=%22./math.js%22%3E%3C/script%3E')), title: 'In html' },
         { language: 'javascript', code: this.encodeHTML('import math from \'@catnap/math.js\''), title: 'In javascript' }
       ],
       renderList: [
