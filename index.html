@@ -48,15 +48,14 @@
     </div>
 
     <div class="copyright">
-      <p>© 2011-2018 kiccer. All Rights Reserved.</p>
-      <p id="cnzz_stat_icon_1278061537"></p>
+      <p>{{ copyright }}</p>
+      <p id="cnzz_stat_icon_1278061537">cnzz 站长统计.</p>
     </div>
   </div>
 </body>
 <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
 <script src="https://cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
-<script src='http://s4.cnzz.com/z_stat.php?id=1278061537&online=1&show=line'></script>
 <script src="./math.js"></script>
 <script type="text/javascript">
 /* eslint-disable no-new */
@@ -72,6 +71,7 @@ new Vue({
   el: '#app',
   data () {
     return {
+      startYear: 2019,
       howToUse: [
         { language: 'cmd', code: this.encodeHTML('npm install --save @catnap/math.js'), title: 'Install' },
         /* eslint-disable-next-line */
@@ -217,6 +217,7 @@ new Vue({
   mounted () {
     highlightCode()
     this.particlesLoad()
+    this.cnzz()
   },
   updated () {
     highlightCode()
@@ -230,6 +231,17 @@ new Vue({
     },
     particlesLoad () {
       particlesJS.load('particles-js', './static/particles.json', () => {})
+    },
+    cnzz () {
+      let script = document.createElement('script')
+      script.setAttribute('src', `${window.location.protocol}//s4.cnzz.com/z_stat.php?id=1278061537&online=1&show=line`)
+      document.body.appendChild(script)
+    }
+  },
+  computed: {
+    copyright () {
+      let currYear = new Date().getFullYear()
+      return `© ${currYear === this.startYear ? currYear : this.startYear + ' - ' + currYear} kiccer. All Rights Reserved.`
     }
   }
 })
