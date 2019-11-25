@@ -42,7 +42,7 @@ math.hex = function (num, from = 16, to = 10) {
 
 // Random Numbers with Range (Will be abandoned)
 math.rand = function (from = 0, to = 1, decimal = 17) {
-  let dVal = this.abs(to - from)
+  const dVal = this.abs(to - from)
   return +(Math.random() * dVal + this.min(from, to)).toFixed(decimal)
 }
 
@@ -58,10 +58,10 @@ math.random = function (...arg) {
     arg = arg.concat(17)
   }
 
-  let from = arg[0]
-  let to = arg[1]
-  let decimal = arg[2]
-  let dVal = this.abs(to - from)
+  const from = arg[0]
+  const to = arg[1]
+  const decimal = arg[2]
+  const dVal = this.abs(to - from)
 
   return +(Math.random() * dVal + this.min(from, to)).toFixed(decimal)
 }
@@ -80,19 +80,19 @@ math.max = function (...arg) {
 
 // Round up the number of reserved digits
 math.ceil = function (num, decimal = 0) {
-  let mu = 10 ** decimal
+  const mu = 10 ** decimal
   return Math.ceil(num * mu) / mu
 }
 
 // Round down the number of reserved digits
 math.floor = function (num, decimal = 0) {
-  let mu = 10 ** decimal
+  const mu = 10 ** decimal
   return Math.floor(num * mu) / mu
 }
 
 // Rounding the number of reserved digits
 math.round = function (num, decimal = 0) {
-  let mu = 10 ** decimal
+  const mu = 10 ** decimal
   return Math.round(num * mu) / mu
 }
 
@@ -103,9 +103,9 @@ math.range = function (...arg) {
 
 // 人民币大写，转自：http://outofmemory.cn/code-snippet/177/javascript-jiang-renminbi-jine-switch-daxie
 math.RMB = function (rmb) {
-  let fraction = ['角', '分']
-  let digit = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖']
-  let unit = [['元', '万', '亿'], ['', '拾', '佰', '仟']]
+  const fraction = ['角', '分']
+  const digit = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖']
+  const unit = [['元', '万', '亿'], ['', '拾', '佰', '仟']]
 
   let s = fraction.map((n, i) => (digit[Math.floor(Math.abs(rmb) * 10 * 10 ** i) % 10] + n).replace(/零./, '')).join('') || '整'
 
@@ -131,14 +131,14 @@ math.Range = function (...arg) {
 }
 
 math.Range.prototype.in = function (num) {
-  let s = this.r.slice(0, 1)[0]
-  let e = this.r.slice(-1)[0]
+  const s = this.r.slice(0, 1)[0]
+  const e = this.r.slice(-1)[0]
   return Math.max(s, Math.min(num, e))
 }
 
 math.Range.prototype.rand = function (num = 17) {
-  let s = this.r.slice(0, 1)[0]
-  let e = this.r.slice(-1)[0]
+  const s = this.r.slice(0, 1)[0]
+  const e = this.r.slice(-1)[0]
   return math.random(s, e, num)
 }
 
