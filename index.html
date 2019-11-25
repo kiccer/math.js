@@ -56,7 +56,7 @@
 <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
 <script src="https://cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
-<script src="./math.js"></script>
+<script src="./dist/math.es5.js"></script>
 <script type="text/javascript">
 /* eslint-disable no-new */
 /* global Vue math hljs particlesJS */
@@ -82,153 +82,153 @@ new Vue({
           title: 'Inherited the method of Math object.',
           demo: [
             // { label: `const math = Object.create(Math)`, value: 'Inherited the method of Math object.' },
-            { label: `math.min(1, 2)`, value: math.min(1, 2) },
-            { label: `math.max(1, 2)`, value: math.max(1, 2) },
-            { label: `math.pow(2, 3)`, value: math.pow(2, 3) },
-            { label: `math.random()`, value: math.random() }
+            { label: 'math.min(1, 2)', value: math.min(1, 2) },
+            { label: 'math.max(1, 2)', value: math.max(1, 2) },
+            { label: 'math.pow(2, 3)', value: math.pow(2, 3) },
+            { label: 'math.random()', value: math.random() }
           ]
         },
         {
           title: 'Get the data type.',
           demo: [
-            { label: `math.type(console.log)`, value: math.type(console.log) },
-            { label: `math.type([])`, value: math.type([]) },
-            { label: `math.type({})`, value: math.type({}) },
-            { label: `math.type(null)`, value: math.type(null) },
-            { label: `math.type(NaN)`, value: math.type(NaN) },
-            { label: `math.type(Infinity)`, value: math.type(Infinity) },
-            { label: `math.type(123)`, value: math.type(123) },
-            { label: `math.type('')`, value: math.type('') },
-            { label: `math.type(new Date())`, value: math.type(new Date()) },
-            { label: `math.type(undefined)`, value: math.type(undefined) },
-            { label: `math.type()`, value: math.type() }
+            { label: 'math.type(console.log)', value: math.type(console.log) },
+            { label: 'math.type([])', value: math.type([]) },
+            { label: 'math.type({})', value: math.type({}) },
+            { label: 'math.type(null)', value: math.type(null) },
+            { label: 'math.type(NaN)', value: math.type(NaN) },
+            { label: 'math.type(Infinity)', value: math.type(Infinity) },
+            { label: 'math.type(123)', value: math.type(123) },
+            { label: 'math.type(\'\')', value: math.type('') },
+            { label: 'math.type(new Date())', value: math.type(new Date()) },
+            { label: 'math.type(undefined)', value: math.type(undefined) },
+            { label: 'math.type()', value: math.type() }
           ]
         },
         {
           title: 'Parametric formatting.',
           demo: [
-            { label: `math.arg(1, '2', 3, 4)`, value: math.arg(1, '2', 3, 4) },
-            { label: `math.arg([1, '2', 3, 4])`, value: math.arg([1, '2', 3, 4]) },
-            { label: `math.arg([1, '2'], 3, [4])`, value: math.arg([1, '2'], 3, [4]) }
+            { label: 'math.arg(1, \'2\', 3, 4)', value: math.arg(1, '2', 3, 4) },
+            { label: 'math.arg([1, \'2\', 3, 4])', value: math.arg([1, '2', 3, 4]) },
+            { label: 'math.arg([1, \'2\'], 3, [4])', value: math.arg([1, '2'], 3, [4]) }
           ]
         },
         {
           title: 'Array summation.',
           demo: [
-            { label: `math.sum(2, 3, 5)`, value: math.sum(2, 3, 5) },
-            { label: `math.sum([4, 2, 6])`, value: math.sum([4, 2, 6]) },
-            { label: `math.sum([6, 8], 3, [4])`, value: math.sum([6, 8], 3, [4]) }
+            { label: 'math.sum(2, 3, 5)', value: math.sum(2, 3, 5) },
+            { label: 'math.sum([4, 2, 6])', value: math.sum([4, 2, 6]) },
+            { label: 'math.sum([6, 8], 3, [4])', value: math.sum([6, 8], 3, [4]) }
           ]
         },
         {
           title: 'Average value.',
           demo: [
-            { label: `math.avg(2, 3, 5)`, value: math.avg(2, 3, 5) },
-            { label: `math.avg([4, 2, 6])`, value: math.avg([4, 2, 6]) },
-            { label: `math.avg([6, 8], 3, [4])`, value: math.avg([6, 8], 3, [4]) }
+            { label: 'math.avg(2, 3, 5)', value: math.avg(2, 3, 5) },
+            { label: 'math.avg([4, 2, 6])', value: math.avg([4, 2, 6]) },
+            { label: 'math.avg([6, 8], 3, [4])', value: math.avg([6, 8], 3, [4]) }
           ]
         },
         {
           title: 'Multiplication.',
           demo: [
-            { label: `math.mcl(2, 3, 5)`, value: math.mcl(2, 3, 5) },
-            { label: `math.mcl([4, 2, 6])`, value: math.mcl([4, 2, 6]) },
-            { label: `math.mcl([6, 8], 3, [4])`, value: math.mcl([6, 8], 3, [4]) }
+            { label: 'math.mcl(2, 3, 5)', value: math.mcl(2, 3, 5) },
+            { label: 'math.mcl([4, 2, 6])', value: math.mcl([4, 2, 6]) },
+            { label: 'math.mcl([6, 8], 3, [4])', value: math.mcl([6, 8], 3, [4]) }
           ]
         },
         {
           title: 'math.hex(num, from, to)',
           demo: [
-            { label: `math.hex('ff')`, value: math.hex('ff') },
-            { label: `math.hex('ff', 16, 2)`, value: math.hex('ff', 16, 2) },
-            { label: `math.hex('255', 10, 16)`, value: math.hex('255', 10, 16) },
-            { label: `math.hex('255', 10, 2)`, value: math.hex('255', 10, 2) },
-            { label: `math.hex('17', 8, 2)`, value: math.hex('17', 8, 2) },
-            { label: `math.hex('ff', 8, 2)`, value: math.hex('ff', 8, 2) }
+            { label: 'math.hex(\'ff\')', value: math.hex('ff') },
+            { label: 'math.hex(\'ff\', 16, 2)', value: math.hex('ff', 16, 2) },
+            { label: 'math.hex(\'255\', 10, 16)', value: math.hex('255', 10, 16) },
+            { label: 'math.hex(\'255\', 10, 2)', value: math.hex('255', 10, 2) },
+            { label: 'math.hex(\'17\', 8, 2)', value: math.hex('17', 8, 2) },
+            { label: 'math.hex(\'ff\', 8, 2)', value: math.hex('ff', 8, 2) }
           ]
         },
         {
           title: 'Random Numbers with Range.',
           demo: [
-            { label: `math.random()`, value: math.random() },
-            { label: `math.random(2)`, value: math.random(2) },
-            { label: `math.random(50, 100)`, value: math.random(50, 100) },
-            { label: `math.random(50, 100, 2)`, value: math.random(50, 100, 2) }
+            { label: 'math.random()', value: math.random() },
+            { label: 'math.random(2)', value: math.random(2) },
+            { label: 'math.random(50, 100)', value: math.random(50, 100) },
+            { label: 'math.random(50, 100, 2)', value: math.random(50, 100, 2) }
           ]
         },
         {
           title: '"math.min" and "math.max" support array parameters.',
           demo: [
-            { label: `Math.min([1, 2, 3])`, value: Math.min([1, 2, 3]) },
-            { label: `math.min([1, 2, 3])`, value: math.min([1, 2, 3]) },
-            { label: `math.min([1, 2, 3], 4, [5])`, value: math.min([1, 2, 3], 4, [5]) },
-            { label: `Math.max([1, 2, 3])`, value: Math.max([1, 2, 3]) },
-            { label: `math.max([1, 2, 3])`, value: math.max([1, 2, 3]) },
-            { label: `math.max([1, 2, 3], 4, [5])`, value: math.max([1, 2, 3], 4, [5]) }
+            { label: 'Math.min([1, 2, 3])', value: Math.min([1, 2, 3]) },
+            { label: 'math.min([1, 2, 3])', value: math.min([1, 2, 3]) },
+            { label: 'math.min([1, 2, 3], 4, [5])', value: math.min([1, 2, 3], 4, [5]) },
+            { label: 'Math.max([1, 2, 3])', value: Math.max([1, 2, 3]) },
+            { label: 'math.max([1, 2, 3])', value: math.max([1, 2, 3]) },
+            { label: 'math.max([1, 2, 3], 4, [5])', value: math.max([1, 2, 3], 4, [5]) }
           ]
         },
         {
           title: 'Round up the number of reserved digits.',
           demo: [
-            { label: `math.ceil(1.333)`, value: math.ceil(1.333) },
-            { label: `math.ceil(1.333, 2)`, value: math.ceil(1.333, 2) }
+            { label: 'math.ceil(1.333)', value: math.ceil(1.333) },
+            { label: 'math.ceil(1.333, 2)', value: math.ceil(1.333, 2) }
           ]
         },
         {
           title: 'Round down the number of reserved digits.',
           demo: [
-            { label: `math.floor(1.555)`, value: math.floor(1.555) },
-            { label: `math.floor(1.555, 2)`, value: math.floor(1.555, 2) }
+            { label: 'math.floor(1.555)', value: math.floor(1.555) },
+            { label: 'math.floor(1.555, 2)', value: math.floor(1.555, 2) }
           ]
         },
         {
           title: 'Rounding the number of reserved digits.',
           demo: [
-            { label: `math.round(1.333)`, value: math.round(1.333) },
-            { label: `math.round(1.333, 2)`, value: math.round(1.333, 2) },
-            { label: `math.round(1.555)`, value: math.round(1.555) },
-            { label: `math.round(1.555, 2)`, value: math.round(1.555, 2) }
+            { label: 'math.round(1.333)', value: math.round(1.333) },
+            { label: 'math.round(1.333, 2)', value: math.round(1.333, 2) },
+            { label: 'math.round(1.555)', value: math.round(1.555) },
+            { label: 'math.round(1.555, 2)', value: math.round(1.555, 2) }
           ]
         },
         {
           title: 'Returns the number of specified ranges. Same as "Math.max(50, Math.min(number, 100))"',
           demo: [
-            { label: `math.range().in(-1)`, value: math.range().in(-1) },
-            { label: `math.range().in(2)`, value: math.range().in(2) },
-            { label: `math.range().in(0.5)`, value: math.range().in(0.5) },
-            { label: `math.range(50, 100).in(10)`, value: math.range(50, 100).in(10) },
-            { label: `math.range(50, 100).in(110)`, value: math.range(50, 100).in(110) },
-            { label: `math.range(50, 100).in(50)`, value: math.range(50, 100).in(50) }
+            { label: 'math.range().in(-1)', value: math.range().in(-1) },
+            { label: 'math.range().in(2)', value: math.range().in(2) },
+            { label: 'math.range().in(0.5)', value: math.range().in(0.5) },
+            { label: 'math.range(50, 100).in(10)', value: math.range(50, 100).in(10) },
+            { label: 'math.range(50, 100).in(110)', value: math.range(50, 100).in(110) },
+            { label: 'math.range(50, 100).in(50)', value: math.range(50, 100).in(50) }
           ]
         },
         {
           title: 'Returns a random number of specified ranges. Same as "math.random(50, 100, 2)"',
           demo: [
-            { label: `math.range().rand()`, value: math.range().rand() },
-            { label: `math.range().rand(2)`, value: math.range().rand(2) },
-            { label: `math.range(50, 100).rand()`, value: math.range(50, 100).rand() },
-            { label: `math.range(50, 100).rand(2)`, value: math.range(50, 100).rand(2) }
+            { label: 'math.range().rand()', value: math.range().rand() },
+            { label: 'math.range().rand(2)', value: math.range().rand(2) },
+            { label: 'math.range(50, 100).rand()', value: math.range(50, 100).rand() },
+            { label: 'math.range(50, 100).rand(2)', value: math.range(50, 100).rand(2) }
           ]
         },
         {
           title: '人民币大写',
           demo: [
-            { label: `math.RMB(0.10)`, value: math.RMB(0.10) },
-            { label: `math.RMB(0.01)`, value: math.RMB(0.01) },
-            { label: `math.RMB(0.11)`, value: math.RMB(0.11) },
-            { label: `math.RMB(10)`, value: math.RMB(10) },
-            { label: `math.RMB(500)`, value: math.RMB(500) },
-            { label: `math.RMB(5000000)`, value: math.RMB(5000000) },
-            { label: `math.RMB(123456789)`, value: math.RMB(123456789) },
-            { label: `math.RMB(123456789.50)`, value: math.RMB(123456789.50) },
-            { label: `math.RMB(-0.10)`, value: math.RMB(-0.10) },
-            { label: `math.RMB(-0.01)`, value: math.RMB(-0.01) },
-            { label: `math.RMB(-0.11)`, value: math.RMB(-0.11) },
-            { label: `math.RMB(-10)`, value: math.RMB(-10) },
-            { label: `math.RMB(-500)`, value: math.RMB(-500) },
-            { label: `math.RMB(-5000000)`, value: math.RMB(-5000000) },
-            { label: `math.RMB(-123456789)`, value: math.RMB(-123456789) },
-            { label: `math.RMB(-123456789.50)`, value: math.RMB(-123456789.50) }
+            { label: 'math.RMB(0.10)', value: math.RMB(0.10) },
+            { label: 'math.RMB(0.01)', value: math.RMB(0.01) },
+            { label: 'math.RMB(0.11)', value: math.RMB(0.11) },
+            { label: 'math.RMB(10)', value: math.RMB(10) },
+            { label: 'math.RMB(500)', value: math.RMB(500) },
+            { label: 'math.RMB(5000000)', value: math.RMB(5000000) },
+            { label: 'math.RMB(123456789)', value: math.RMB(123456789) },
+            { label: 'math.RMB(123456789.50)', value: math.RMB(123456789.50) },
+            { label: 'math.RMB(-0.10)', value: math.RMB(-0.10) },
+            { label: 'math.RMB(-0.01)', value: math.RMB(-0.01) },
+            { label: 'math.RMB(-0.11)', value: math.RMB(-0.11) },
+            { label: 'math.RMB(-10)', value: math.RMB(-10) },
+            { label: 'math.RMB(-500)', value: math.RMB(-500) },
+            { label: 'math.RMB(-5000000)', value: math.RMB(-5000000) },
+            { label: 'math.RMB(-123456789)', value: math.RMB(-123456789) },
+            { label: 'math.RMB(-123456789.50)', value: math.RMB(-123456789.50) }
           ]
         }
       ]
@@ -253,14 +253,14 @@ new Vue({
       particlesJS.load('particles-js', './static/particles.json', () => {})
     },
     cnzz () {
-      let script = document.createElement('script')
+      const script = document.createElement('script')
       script.setAttribute('src', `${window.location.protocol}//s4.cnzz.com/z_stat.php?id=1278061537&online=1&show=line`)
       document.body.appendChild(script)
     }
   },
   computed: {
     copyright () {
-      let currYear = new Date().getFullYear()
+      const currYear = new Date().getFullYear()
       return `© ${currYear === this.startYear ? currYear : this.startYear + ' - ' + currYear} kiccer. All Rights Reserved.`
     }
   }
